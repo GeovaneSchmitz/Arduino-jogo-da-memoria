@@ -1,4 +1,4 @@
-/*Peojeto final da disciplina de Lógica de Programação - IFSC
+/*Projeto final da disciplina de Lógica de Programação - IFSC
   Autores: Geovane Schmitz e Pamela Fialho
   Turma: 622
   Data: 08/09/2020
