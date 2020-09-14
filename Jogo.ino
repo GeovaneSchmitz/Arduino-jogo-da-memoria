@@ -35,9 +35,9 @@ const int leds[OPTIONS_COUNT] = {LED_0, LED_1, LED_2, LED_3};                //V
 short order[LIMIT] = {0};                                                    //Vetor responsável por organizar os LEDs
 
 //Definindo as funções
-void reset();             //Define a função que reseta as confugurações dos jogos para o padrão inicial
+void reset();             //Define a função que reseta as configurações dos jogos para o padrão inicial
 void show_sequece();      //Define a função que mostra a sequência de LEDs que deverá ser repetida nos botões
-void add_sequece();       //Define a função que adiciona mais uma sequência de LEDs caso o jagador não esteja no último nível/fase
+void add_sequece();       //Define a função que adiciona mais uma sequência de LEDs, caso o jogador não esteja no último nível/fase
 void check_if_win();      //Define a função que verifica se o jogador ganhou o jogo, se chegou no último nível/fase
 void read_buttons();      //Define a função que realiza a leitura dos botões
 void show_init_message(); //Define a função que coloca no Display LCD a mensagem inicial do jogo
@@ -62,7 +62,7 @@ void setup() //Função inicial do sistema
   pinMode(3, INPUT);   //Define o pino digital associado ao pino DB5 do Display LCD como entrada
   show_init_message(); //Chama a função que coloca no Display LCD a mensagem inicial do jogo
   reset();             //Chama a função que reseta o jogo e inicia os comandos do jogo
-  delay(2000);         //Delei entre o final do jogo
+  delay(2000);         //Delei entre o final do jogo e o começo
 }
 
 void loop() //Função loop principal do sistema
@@ -101,7 +101,7 @@ void show_sequece() //Define a função que mostra a sequência de LEDs que deve
   }
 }
 
-void add_sequece() //Define a função que adiciona mais uma sequência de LEDs caso o jagador não esteja no último nível/fase
+void add_sequece() //Define a função que adiciona mais uma sequência de LEDs caso o jogador não esteja no último nível/fase
 {
   if (level < LIMIT) //Se o jogador estiver em um nível/fase anterior ao limite de níveis determinado pela variável LIMIT
   {
@@ -131,7 +131,7 @@ void check_if_win() //Define a função que verifica se o jogador ganhou o jogo,
 void read_buttons() //Define a função que realiza a leitura dos botões
 {
   int i = 0;        //Define uma variável para controle do loop
-  while (i < level) //Enquanto a variável i de controle for menor que o nível/fase que o jogar está irá fazer a leitura dos botões
+  while (i < level) //Enquanto a variável i de controle for menor que o nível/fase que o jogador está irá fazer a leitura dos botões
   {
     if (digitalRead(BUTTON_RESET)) //Se o botão de reset for ativado, o jogo será resetado
     {
